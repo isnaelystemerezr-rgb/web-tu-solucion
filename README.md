@@ -72,6 +72,7 @@ web-tu-solucion/
 │           ├── NoEncontrada.jsx   # 404
 │           └── ErrorDeRuta.jsx
 ├── start.sh                                  # arranca backend + frontend
+├── API_REFERENCE.md                          # contrato de la API (endpoints y errores)
 └── README.md
 ```
 
@@ -264,6 +265,9 @@ por campo de Bean Validation.
 ---
 
 ## 6. API REST
+
+Contrato completo (ejemplos de request/response y tabla de códigos de error):
+**[`API_REFERENCE.md`](./API_REFERENCE.md)**.
 
 Base: `http://localhost:8080`
 
