@@ -1,0 +1,18 @@
+# Backend (Maven / Java)
+backend/target/
+backend/uploads/*
+!backend/uploads/.gitkeep
+*.class
+*.log
+
+# Frontend (Node)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Editores / sistema
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

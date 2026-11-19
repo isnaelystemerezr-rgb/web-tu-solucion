@@ -1,0 +1,29 @@
+# Perfil opcional para PostgreSQL.
+# Uso:  mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+#       (o)  java -jar target/taller-reparaciones-1.0.0.jar --spring.profiles.active=postgres
+#
+# Variables de entorno:
+#   PGHOST, PGPORT, PGDATABASE, PGUSER, PGPASSWORD
+#
+# OJO: con este perfil el esquema NO se recrea en cada arranque. Para desarrollo se recomienda H2.
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST:localhost}:${PGPORT:5432}/${PGDATABASE:taller}
+    driver-class-name: org.postgresql.Driver
+    username: ${PGUSER:postgres}
+    password: ${PGPASSWORD:postgres}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  # El seed data.sql usa funciones de H2, así que con PostgreSQL NO se ejecuta
+  # automáticamente: ver db/postgres-seed.sql y el README.
+  sql:
+    init:
+      mode: never
+
+  h2:
+    console:
+      enabled: false
